@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:maps="http://jmix.io/schema/maps/ui"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://mapBrowse.caption"
+        focusComponent="map">
+    <data readOnly="true">
+        <collection id="mapsDc"
+                    class="com.company.jmixmap.entity.Map">
+            <fetchPlan extends="_base"/>
+            <loader id="mapsDl">
+                <query>
+                    <![CDATA[select e from gg_Map e]]>
+                </query>
+            </loader>
+        </collection>
+        <instance id="dotsesDc" class="com.company.jmixmap.entity.Dots">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="map" spacing="true">
+        <maps:geoMap id="map"
+                     height="100%"
+                     width="100%"
+                     centerY="50.446218"
+                     centerX="30.529477"
+                     zoom="14">
+            <maps:layers selectedLayer="mapLayer">
+                <maps:tile id="tiles" tileProvider="map_OpenStreetMap"/>
+                <maps:vector id="mapLayer"
+                             dataContainer="dotsesDc"
+                             editable="true"/>
+            </maps:layers>
+        </maps:geoMap>
+
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

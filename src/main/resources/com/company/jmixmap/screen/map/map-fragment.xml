@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://jmix.io/schema/ui/fragment"
+          xmlns:maps="http://jmix.io/schema/maps/ui">
+    <data>
+        <instance id="mapDc"
+                  class="com.company.jmixmap.entity.Map"
+                  fetchPlan="_base">
+            <loader/>
+        </instance>
+    </data>
+    <layout>
+        <maps:geoMap id="map"
+                     height="100%"
+                     width="100%"
+                     centerY="50.446218"
+                     centerX="30.529477"
+                     zoom="14">
+            <maps:layers selectedLayer="dotsesLayer">
+                <maps:tile id="tiles" tileProvider="map_OpenStreetMap"/>
+                <maps:vector id="dotsesLayer"
+                             dataContainer="dotsesDc"
+                             editable="true"/>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</fragment>
+

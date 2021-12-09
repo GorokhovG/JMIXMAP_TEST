@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://com.company.jmixmap/menu.application" insertBefore="administration">
+        <item screen="gg_User.browse" caption="msg://com.company.jmixmap.screen.user/UserBrowse.caption"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+        <item screen="gg_DotsEntity.browse" caption="msg://com.company.jmixmap.screen.dots/dotsBrowse.menu"/>
+        <item screen="gg_IconEntity.browse" caption="msg://com.company.jmixmap.screen.icons/iconsBrowse.menu"/>
+        <item screen="gg_Map.browse" caption="msg://com.company.jmixmap.screen.map/mapBrowse.menu"/>
+    </menu>
+
+</menu-config>
