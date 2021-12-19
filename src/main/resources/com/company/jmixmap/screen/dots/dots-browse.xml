@@ -56,7 +56,7 @@
                 <column id="icon"/>
                 <column id="dot"/>
             </columns>
-            <simplePagination itemsPerPageDefaultValue="20000"/>
+            <simplePagination itemsPerPageDefaultValue="400"/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
                 <button id="createBtn" action="dotsesTable.create"/>
@@ -75,7 +75,7 @@
                 <maps:tile id="tiles" tileProvider="map_OpenStreetMap"/>
                 <maps:vector id="dotsesLayer"
                              dataContainer="dotsesDc"
-                             editable="true"/>
+                             editable="false"/>
             </maps:layers>
         </maps:geoMap>
 
